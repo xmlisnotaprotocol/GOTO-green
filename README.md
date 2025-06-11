@@ -1,0 +1,1 @@
+This script will run [with workloader](https://github.com/brian1917/workloader/releases) and move the ready (green passed compatibility test or yellow GPO warnings and no red) idle workloads to visibility
