@@ -34,7 +34,7 @@ ${WORKLOADER} compatibility -m --output-file ${NOW}.csv
 sed -i 's/mode/enforcement/g' mode-input-${NOW}.csv
 
 # Any Windows workload that is status yellow and GroupPolicy=yellow and no reds set to move to visibility_only
-awk -F, '/""Group_policy"":""Domain firewall GPO found"",""status"":""yellow""/&&!/,red,/{print $2",visibility_only"}' ${NOW}.csv >> mode-input-${NOW}.csv
+awk -F, '/""Group_policy"":"" firewall GPO found"",""status"":""yellow""/&&!/,red,/{print $2",visibility_only"}' ${NOW}.csv >> mode-input-${NOW}.csv
 
 # Move to visibility_only
 ${WORKLOADER} wkld-import mode-input-${NOW}.csv --allow-enforcement-changes --update-pce  --no-prompt
